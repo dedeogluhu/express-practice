@@ -1,12 +1,18 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const { PORT } = require('./config');
 const { connectMongoDB } = require('./utils');
-
-const app = express();
 
 const listRouter = require('./routers/api/list');
 const addRouter = require('./routers/api/add');
 
+const app = express();
+
+//Middlewares
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+//Routers
 app.use('/', listRouter);
 app.use('/add', addRouter);
 
