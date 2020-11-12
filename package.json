@@ -1,0 +1,24 @@
+{
+  "name": "express-practice",
+  "version": "1.0.0",
+  "description": "Just a simple rest api to keep my memory fresh",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dedeogluhu/express-practice.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "author": "dedeogluhu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dedeogluhu/express-practice/issues"
+  },
+  "homepage": "https://github.com/dedeogluhu/express-practice#readme"
+}
