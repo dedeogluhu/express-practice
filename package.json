@@ -4,7 +4,9 @@
   "description": "Just a simple rest api to keep my memory fresh",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
