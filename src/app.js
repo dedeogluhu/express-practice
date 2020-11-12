@@ -13,8 +13,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Routers
-app.use('/', listRouter);
-app.use('/add', addRouter);
+app.use('/api', listRouter);
+app.use('/api/add', addRouter);
 
 connectMongoDB();
 
