@@ -30,7 +30,7 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-router.put('/:id', async (req, res) => {
+router.patch('/:id', async (req, res) => {
     try {
         const postUpdated = await Post.findByIdAndUpdate(req.params.id, {
             question: req.body.question,

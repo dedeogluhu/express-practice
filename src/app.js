@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const { PORT } = require('./config');
 const utils = require('./utils');
 
-const listRouter = require('./routers/api/list');
+const postsRouter = require('./routers/api/posts');
 const addRouter = require('./routers/api/add');
 
 const app = express();
@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Routers
-app.use('/api', listRouter);
+app.use('/api/posts', postsRouter);
 app.use('/api/add', addRouter);
 
 utils.connectMongoDB();
