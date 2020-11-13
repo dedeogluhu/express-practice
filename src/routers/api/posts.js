@@ -1,16 +1,19 @@
 const express = require('express');
+const createFunctions = require('./DataAccess/createFunctions');
 const readFunctions = require('./DataAccess/readFunctions');
-const deleteFunctions = require('./DataAccess/deleteFunctions');
 const updateFunctions = require('./DataAccess/updateFunctions');
+const deleteFunctions = require('./DataAccess/deleteFunctions');
 
 const router = express.Router();
 
-router.get('/', readFunctions.getAll(req, res));
+router.get('/', readFunctions.getAll);
 
-router.get('/:id', readFunctions.getById(req, res));
+router.get('/:id', readFunctions.getById);
 
-router.delete('/:id', deleteFunctions.deleteById(req, res));
+router.post('/add', createFunctions.createPost);
 
-router.patch('/:id', updateFunctions.updateById(req, res));
+router.delete('/:id', deleteFunctions.deleteById);
+
+router.patch('/:id', updateFunctions.updateById);
 
 module.exports = router;
