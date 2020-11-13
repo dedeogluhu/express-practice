@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { PORT } = require('./config');
-const { connectMongoDB } = require('./utils');
+const utils = require('./utils');
 
 const listRouter = require('./routers/api/list');
 const addRouter = require('./routers/api/add');
@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api', listRouter);
 app.use('/api/add', addRouter);
 
-connectMongoDB();
+utils.connectMongoDB();
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`);
