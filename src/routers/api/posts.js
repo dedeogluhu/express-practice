@@ -1,47 +1,16 @@
 const express = require('express');
-const Post = require('../../models/Post');
+const readFunctions = require('./DataAccess/readFunctions');
+const deleteFunctions = require('./DataAccess/deleteFunctions');
+const updateFunctions = require('./DataAccess/updateFunctions');
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
-    try {
-        const posts = await Post.find();
-        res.send(posts);
-    } catch (error) {
-        console.log(error);
-    }
-});
+router.get('/', readFunctions.getAll(req, res));
 
-router.get('/:id', async (req, res) => {
-    try {
-        const post = await Post.findById(req.params.id);
-        res.send(post);
-    } catch (error) {
-        console.log(error);
-    }
-});
+router.get('/:id', readFunctions.getById(req, res));
 
-router.delete('/:id', async (req, res) => {
-    try {
-        const postDeleted = await Post.findByIdAndDelete(req.params.id);
-        res.send(postDeleted);
-    } catch (error) {
-        console.log(error);
-    }
-});
+router.delete('/:id', deleteFunctions.deleteById(req, res));
 
-router.patch('/:id', async (req, res) => {
-    try {
-        const postUpdated = await Post.findByIdAndUpdate(req.params.id, {
-            question: req.body.question,
-            choices: req.body.choices
-        }, {
-            new: true
-        });
-        res.send(postUpdated);
-    } catch (error) {
-        console.log(error);
-    }
-});
+router.patch('/:id', updateFunctions.updateById(req, res));
 
 module.exports = router;
