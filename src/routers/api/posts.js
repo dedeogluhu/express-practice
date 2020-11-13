@@ -1,8 +1,8 @@
 const express = require('express');
-const createFunctions = require('./DataAccess/createFunctions');
-const readFunctions = require('./DataAccess/readFunctions');
-const updateFunctions = require('./DataAccess/updateFunctions');
-const deleteFunctions = require('./DataAccess/deleteFunctions');
+const createFunctions = require('./DataAccessFunctions/createFunctions');
+const readFunctions = require('./DataAccessFunctions/readFunctions');
+const updateFunctions = require('./DataAccessFunctions/updateFunctions');
+const deleteFunctions = require('./DataAccessFunctions/deleteFunctions');
 
 const router = express.Router();
 
