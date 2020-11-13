@@ -4,7 +4,8 @@ const { PORT } = require('./config');
 const utils = require('./utils');
 
 const postsRouter = require('./routers/api/posts');
-const addRouter = require('./routers/api/add');
+const addRouter = require('./routers/add');
+const indexRouter = require('./routers/index');
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //Routers
 app.use('/api/posts', postsRouter);
 app.use('/api/add', addRouter);
+app.use('/', indexRouter);
 
 utils.connectMongoDB();
 
