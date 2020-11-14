@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Routers
 app.use('/api/posts', postsRouter);
-app.use('/api/add', addRouter);
+app.use('/add', addRouter);
 app.use('/', indexRouter);
 
 utils.connectMongoDB();
