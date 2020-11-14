@@ -10,7 +10,7 @@ router.get('/', readFunctions.getAll);
 
 router.get('/:id', readFunctions.getById);
 
-router.post('/add', createFunctions.createPost);
+router.post('/', createFunctions.createPost);
 
 router.delete('/:id', deleteFunctions.deleteById);
 
